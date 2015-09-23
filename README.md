@@ -15,6 +15,7 @@ Esse aplicativo tem como objetivo gerenciar programas de tv/séries/filmes. O us
 
 ##### Bônus
   - Follow [the rules]
+  - Cadastro de usuários com envio de email de confirmação
 
 #### Frontend
   - Código modularizado
