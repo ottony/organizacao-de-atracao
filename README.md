@@ -17,13 +17,13 @@ Esse aplicativo tem como objetivo gerenciar programas de tv/séries/filmes. O us
   - Follow [the rules]
 
 #### Frontend
-  - Utilizar algum framework MVC
   - Código modularizado
   - Testes de JavaScript
   - Pode utilizar um servidor backend ou armazenar os dados em LocalStorage
 
 ##### Bônus
   - React.js
+  - Utilizar algum framework MVC
 
 ## Tarefas:
 
@@ -32,6 +32,15 @@ Esse aplicativo tem como objetivo gerenciar programas de tv/séries/filmes. O us
   - Essa aplicação pode ser usada por vários usuários e cada usuário poderá cadastrar seus programas. Não é necessário fazer a autenticação, mas é necessário que eu possa cadastrar o programa em nome de um usuário. Também não é necessário fazer o cadastro do usuário. Você pode cadastrar os usuários no seed do Rails.
   - O site não precisa ter um layout muito rebuscado, porém, precisa ser organizado.
   - Quero ter uma página que liste os usuários e ao clicar no usuário verei um link com o título de "Minhas atrações". Ao clicar nesse link, abre uma div na mesma página com as atrações cadastradas por esse usuário.
+
+## Como o projeto será avaliado
+  - O repositório possui um README com instruções de como rodar o projeto e os testes?
+  - O aplicativo funciona corretamente?
+  - Todos os requisitos foram cumpridos? Algo além do esperado foi feito?
+  - O código é fácil de entender?
+  - É possível entender toda a aplicação a partir dos testes?
+  - Se fosse preciso adicionar funcionalidades no projeto final, seria mais fácil manter o código ou fazer do zero?
+  - Os commits são bem divididos? Tem algum commit quebrado?
 
 Qualquer dúvida em relação ao projeto, pode me chamar. A gente vai trabalhar junto então essa comunicação é importante.
 
