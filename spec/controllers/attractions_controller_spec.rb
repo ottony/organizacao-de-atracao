@@ -73,6 +73,17 @@ RSpec.describe AttractionsController do
     it 'removes attraction' do
       expect { subject }.to change{ Attraction.count }.by(-1)
     end
+  end
 
+  describe 'GET index' do
+    before { get :index }
+
+    it 'returns success' do
+      expect( response ).to have_http_status(:success)
+    end
+
+    it 'assigns @attractions' do
+      expect( assigns :attractions ).to be_kind_of ActiveRecord::Relation
+    end
   end
 end

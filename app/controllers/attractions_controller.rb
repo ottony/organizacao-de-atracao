@@ -30,6 +30,10 @@ class AttractionsController < ApplicationController
     success_redirect
   end
 
+  def index
+    @attractions = Attraction.all
+  end
+
   private
 
   def set_attraction
