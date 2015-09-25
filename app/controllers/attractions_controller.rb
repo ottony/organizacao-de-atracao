@@ -13,6 +13,9 @@ class AttractionsController < ApplicationController
     end
   end
 
+  def index
+  end
+
   private
 
   def attraction_params
