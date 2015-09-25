@@ -11,6 +11,7 @@ require 'factory_girl'
 ActiveRecord::Migration.maintain_test_schema!
 
 Dir['spec/factories/**/*.rb'].each { |f| require File.expand_path( f ) }
+Dir['spec/supports/**/*.rb'].each  { |f| require File.expand_path( f ) }
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

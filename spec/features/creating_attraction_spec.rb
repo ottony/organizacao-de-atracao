@@ -1,4 +1,5 @@
 require 'rails_helper'
+include AttractionsHelper
 
 feature 'Creating attraction' do
   given(:attraction_title) { 'A Lagoa Azul' }
@@ -12,7 +13,7 @@ feature 'Creating attraction' do
     within '#new_attraction' do
       fill_in 'attraction[title]' , with: attraction_title
       fill_in 'attraction[media]' , with: 'Television'
-      fill_in 'attraction[day]'   , with: Time.now
+      select_datetime Time.now    , from: 'attraction_day'
 
       find('input[type="submit"]').click
     end
