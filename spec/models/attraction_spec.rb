@@ -10,4 +10,28 @@ RSpec.describe Attraction do
       expect( build :attraction, :empty ).to be_invalid
     end
   end
+
+  context 'scope' do
+    let(:coming_attractions) { create_list :attraction, 5, :coming }
+    let(:past_attractions)   { create_list :attraction, 5, :past }
+
+    before do
+      coming_attractions
+      past_attractions
+    end
+
+    it 'coming attractions' do
+      expect( Attraction.coming ).to match_array( coming_attractions )
+    end
+
+    it 'past attractions' do
+      expect( Attraction.past ).to match_array( past_attractions )
+    end
+
+    it 'order by day' do
+      expected_coming = Attraction.where(id: coming_attractions).order(:day)
+
+      expect( Attraction.coming.map(&:id) ).to eq( expected_coming.map(&:id) )
+    end
+  end
 end
