@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe AttractionsController do
+  let(:attraction) { create :attraction }
+
   describe 'GET new' do
     before { get :new }
 
@@ -30,21 +32,18 @@ RSpec.describe AttractionsController do
   end
 
   describe 'GET edit' do
-    let(:attraction) { create :attraction }
     before { get :edit, id: attraction.id }
 
     it 'returns success' do
       expect( response ).to have_http_status(:success)
     end
 
-    it 'assigns @attracion' do
+    it 'assigns @attraction' do
       expect( assigns :attraction ).to eq attraction
     end
   end
 
   describe 'PUT update' do
-    let(:attraction) { create :attraction }
-
     subject do
       put :update, id: attraction.id, attraction: { title: 'new title' }
     end
@@ -58,5 +57,22 @@ RSpec.describe AttractionsController do
     it 'redirect to attractions_path' do
       expect( subject ).to redirect_to( attractions_path )
     end
+  end
+
+  describe 'DELETE destroy' do
+    before { create_list :attraction, 3 }
+
+    subject do
+      delete :destroy, id: Attraction.last.id
+    end
+
+    it 'redirect to attractions_path' do
+      expect( subject ).to redirect_to( attractions_path )
+    end
+
+    it 'removes attraction' do
+      expect { subject }.to change{ Attraction.count }.by(-1)
+    end
+
   end
 end

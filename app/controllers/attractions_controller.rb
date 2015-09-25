@@ -1,5 +1,5 @@
 class AttractionsController < ApplicationController
-  before_action :set_attraction, only: [:edit, :update, :delete]
+  before_action :set_attraction, only: [:edit, :update, :destroy]
 
   def new
     @attraction = Attraction.new
@@ -9,7 +9,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.new attraction_params
 
     if @attraction.save
-      redirect_to attractions_path, notice: success_notice( @attraction )
+      success_redirect
     else
       render :new
     end
@@ -20,10 +20,16 @@ class AttractionsController < ApplicationController
 
   def update
     if @attraction.update_attributes( attraction_params )
-      redirect_to attractions_path, notice: success_notice( @attraction )
+      success_redirect
     else
       render :edit
     end
+  end
+
+  def destroy
+    @attraction.destroy
+
+    success_redirect
   end
 
   private
@@ -38,9 +44,11 @@ class AttractionsController < ApplicationController
     )
   end
 
-  def success_notice attraction
+  def success_redirect
     action = params[:action]
+    title  = @attraction.try :title
+    notice = I18n.t "attractions.messages.#{ action }.success", title: title
 
-    I18n.t "attractions.messages.#{ action }.success", title: attraction.title
+    redirect_to attractions_path, notice: notice
   end
 end
