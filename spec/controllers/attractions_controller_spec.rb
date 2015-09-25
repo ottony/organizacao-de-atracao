@@ -28,4 +28,35 @@ RSpec.describe AttractionsController do
       expect { subject }.to change(Attraction, :count).by 1
     end
   end
+
+  describe 'GET edit' do
+    let(:attraction) { create :attraction }
+    before { get :edit, id: attraction.id }
+
+    it 'returns success' do
+      expect( response ).to have_http_status(:success)
+    end
+
+    it 'assigns @attracion' do
+      expect( assigns :attraction ).to eq attraction
+    end
+  end
+
+  describe 'PUT update' do
+    let(:attraction) { create :attraction }
+
+    subject do
+      put :update, id: attraction.id, attraction: { title: 'new title' }
+    end
+
+    it 'updates attraction' do
+      attraction
+
+      expect { subject }.to change{ Attraction.first.title }
+    end
+
+    it 'redirect to attractions_path' do
+      expect( subject ).to redirect_to( attractions_path )
+    end
+  end
 end

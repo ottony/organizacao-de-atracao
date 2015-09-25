@@ -17,7 +17,7 @@ feature 'Creating attraction' do
       find('input[type="submit"]').click
     end
 
-    expected_content = I18n.t 'attractions.registrations.success', title: attraction_title
+    expected_content = I18n.t 'attractions.messages.create.success', title: attraction_title
 
     expect( page ).to have_content( expected_content )
   end

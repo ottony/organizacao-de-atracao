@@ -1,8 +1,11 @@
 ---
 pt-BR:
   attractions:
-    registrations:
-      success: 'Atração %{title} cadastrada com sucesso'
+    messages:
+      create:
+        success: 'Atração %{title} cadastrada com sucesso'
+      update:
+        success: 'Atração atualizada com sucesso'
   date:
     abbr_day_names:
     - Dom
