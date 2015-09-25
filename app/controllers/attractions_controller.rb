@@ -8,11 +8,9 @@ class AttractionsController < ApplicationController
   def create
     @attraction = Attraction.new attraction_params
 
-    if @attraction.save
-      success_redirect
-    else
-      render :new
-    end
+    return success_redirect if @attraction.save
+
+    render :new
   end
 
   def edit
@@ -47,7 +45,7 @@ class AttractionsController < ApplicationController
   def success_redirect
     action = params[:action]
     title  = @attraction.try :title
-    notice = I18n.t "attractions.messages.#{ action }.success", title: title
+    notice = I18n.t "attractions.messages.#{ action }.success", title: title, default: ''
 
     redirect_to attractions_path, notice: notice
   end
