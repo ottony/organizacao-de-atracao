@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ottony/organizacao-de-atracao.svg?branch=good-tools)](https://travis-ci.org/ottony/organizacao-de-atracao)
+
 Organização de atrações
 ---------------
 
