@@ -12,6 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # gem 'therubyracer', platforms: :ruby
 
+gem 'clearance', '~> 1.11.0'
+
 gem 'jquery-rails'
 
 group :production do
