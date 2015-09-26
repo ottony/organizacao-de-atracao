@@ -28,8 +28,11 @@ module OrganizacaoDeAtracao
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'pt-BR'
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
+
+    config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
