@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :attractions, :except => :show
   resources :users,
     :controller => 'users',
-    :only => [:new, :create, :destroy]
+    :only => [:new, :create, :destroy, :index]
 
 end
