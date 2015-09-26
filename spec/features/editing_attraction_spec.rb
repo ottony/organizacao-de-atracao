@@ -1,10 +1,12 @@
 require 'rails_helper'
+include Features::ClearanceHelpers
 
 feature 'Editing attraction' do
   given(:empty_attraction) { build( :attraction, :empty ) }
   given(:attraction)       { create( :attraction ) }
 
   background do
+    sign_in
     visit edit_attraction_path( attraction )
   end
 

@@ -50,7 +50,3 @@ module Features
     end
   end
 end
-
-RSpec.configure do |config|
-  config.include Features::ClearanceHelpers, type: :feature
-end

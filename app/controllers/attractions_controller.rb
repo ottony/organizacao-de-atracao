@@ -1,5 +1,6 @@
 class AttractionsController < ApplicationController
   before_action :set_attraction, only: [:edit, :update, :destroy]
+  before_action :require_login, :except => :index
 
   def new
     @attraction = Attraction.new

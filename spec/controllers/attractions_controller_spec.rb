@@ -3,87 +3,105 @@ require 'rails_helper'
 RSpec.describe AttractionsController do
   let(:attraction) { create :attraction }
 
-  describe 'GET new' do
-    before { get :new }
-
-    it 'returns success' do
-      expect( response ).to have_http_status(:success)
+  context 'not logged' do
+    describe 'GET index' do
+      it 'returns success' do
+        expect( get( :index ) ).to have_http_status(:success)
+      end
     end
 
-    it 'assigns @attraction' do
-      expect( assigns :attraction ).to be_kind_of Attraction
-    end
-  end
-
-  describe 'POST create' do
-    let(:attraction_args) do
-      build( :attraction ).as_json( only: [:title, :media] )
-    end
-
-    subject { post :create, attraction: attraction_args }
-
-    it 'redirect to attractions_path' do
-      expect( subject ).to redirect_to( attractions_path )
-    end
-
-    it 'saves one attraction' do
-      expect { subject }.to change(Attraction, :count).by 1
+    describe 'GET new' do
+      it 'redirect to sign_in_path' do
+        expect( get( :new ) ).to redirect_to( sign_in_path )
+      end
     end
   end
 
-  describe 'GET edit' do
-    before { get :edit, id: attraction.id }
+  context 'logged' do
+    before { sign_in }
 
-    it 'returns success' do
-      expect( response ).to have_http_status(:success)
+    describe 'GET new' do
+      before { get :new }
+
+      it 'returns success' do
+        expect( response ).to have_http_status(:success)
+      end
+
+      it 'assigns @attraction' do
+        expect( assigns :attraction ).to be_kind_of Attraction
+      end
     end
 
-    it 'assigns @attraction' do
-      expect( assigns :attraction ).to eq attraction
-    end
-  end
+    describe 'POST create' do
+      let(:attraction_args) do
+        build( :attraction ).as_json( only: [:title, :media] )
+      end
 
-  describe 'PUT update' do
-    subject do
-      put :update, id: attraction.id, attraction: { title: 'new title' }
-    end
+      subject { post :create, attraction: attraction_args }
 
-    it 'updates attraction' do
-      attraction
+      it 'redirect to attractions_path' do
+        expect( subject ).to redirect_to( attractions_path )
+      end
 
-      expect { subject }.to change{ Attraction.first.title }
-    end
-
-    it 'redirect to attractions_path' do
-      expect( subject ).to redirect_to( attractions_path )
-    end
-  end
-
-  describe 'DELETE destroy' do
-    before { create_list :attraction, 3 }
-
-    subject do
-      delete :destroy, id: Attraction.last.id
+      it 'saves one attraction' do
+        expect { subject }.to change(Attraction, :count).by 1
+      end
     end
 
-    it 'redirect to attractions_path' do
-      expect( subject ).to redirect_to( attractions_path )
+    describe 'GET edit' do
+      before { get :edit, id: attraction.id }
+
+      it 'returns success' do
+        expect( response ).to have_http_status(:success)
+      end
+
+      it 'assigns @attraction' do
+        expect( assigns :attraction ).to eq attraction
+      end
     end
 
-    it 'removes attraction' do
-      expect { subject }.to change{ Attraction.count }.by(-1)
+    describe 'PUT update' do
+      subject do
+        put :update, id: attraction.id, attraction: { title: 'new title' }
+      end
+
+      it 'updates attraction' do
+        attraction
+
+        expect { subject }.to change{ Attraction.first.title }
+      end
+
+      it 'redirect to attractions_path' do
+        expect( subject ).to redirect_to( attractions_path )
+      end
     end
-  end
 
-  describe 'GET index' do
-    before { get :index }
+    describe 'DELETE destroy' do
+      before { create_list :attraction, 3 }
 
-    it 'returns success' do
-      expect( response ).to have_http_status(:success)
+      subject do
+        delete :destroy, id: Attraction.last.id
+      end
+
+      it 'redirect to attractions_path' do
+        expect( subject ).to redirect_to( attractions_path )
+      end
+
+      it 'removes attraction' do
+        expect { subject }.to change{ Attraction.count }.by(-1)
+      end
     end
 
-    it 'assigns @attractions' do
-      expect( assigns :attractions ).to be_kind_of ActiveRecord::Relation
+    describe 'GET index' do
+      before { get :index }
+
+      it 'returns success' do
+        expect( response ).to have_http_status(:success)
+      end
+
+      it 'assigns @attractions' do
+        expect( assigns :attractions ).to be_kind_of ActiveRecord::Relation
+      end
     end
   end
 end
