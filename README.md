@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/ottony/organizacao-de-atracao.svg?branch=good-tools)](https://travis-ci.org/ottony/organizacao-de-atracao)
 [![Code Climate](https://codeclimate.com/github/ottony/organizacao-de-atracao/badges/gpa.svg)](https://codeclimate.com/github/ottony/organizacao-de-atracao)
+[![Coverage Status](https://coveralls.io/repos/ottony/organizacao-de-atracao/badge.svg?branch=master&service=github)](https://coveralls.io/github/ottony/organizacao-de-atracao?branch=master)
 
 Organização de atrações
 ---------------

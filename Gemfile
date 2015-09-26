@@ -32,4 +32,5 @@ group :test do
   gem 'guard-rspec', require: false
   gem 'factory_girl', '~> 4.5.0'
   gem 'capybara'    , '~> 2.5.0'
+  gem 'coveralls', require: false
 end
