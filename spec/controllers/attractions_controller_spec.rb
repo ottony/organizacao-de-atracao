@@ -21,13 +21,8 @@ RSpec.describe AttractionsController do
     before { sign_in }
 
     describe 'GET new' do
-      before { get :new }
-
-      it 'returns success' do
-        expect( response ).to have_http_status(:success)
-      end
-
       it 'assigns @attraction' do
+        get :new
         expect( assigns :attraction ).to be_kind_of Attraction
       end
     end
@@ -50,10 +45,6 @@ RSpec.describe AttractionsController do
 
     describe 'GET edit' do
       before { get :edit, id: attraction.id }
-
-      it 'returns success' do
-        expect( response ).to have_http_status(:success)
-      end
 
       it 'assigns @attraction' do
         expect( assigns :attraction ).to eq attraction
@@ -94,10 +85,6 @@ RSpec.describe AttractionsController do
 
     describe 'GET index' do
       before { get :index }
-
-      it 'returns success' do
-        expect( response ).to have_http_status(:success)
-      end
 
       it 'assigns @attractions' do
         expect( assigns :attractions ).to be_kind_of ActiveRecord::Relation
