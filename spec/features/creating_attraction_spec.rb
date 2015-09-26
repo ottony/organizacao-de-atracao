@@ -1,5 +1,5 @@
 require 'rails_helper'
-include AttractionsHelper
+include Features::AttractionsHelpers
 
 feature 'Creating attraction' do
   given(:attraction_title) { 'A Lagoa Azul' }
