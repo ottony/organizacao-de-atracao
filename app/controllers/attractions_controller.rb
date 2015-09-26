@@ -31,7 +31,8 @@ class AttractionsController < ApplicationController
   end
 
   def index
-    @attractions = Attraction.coming
+    @attractions   = current_user.attractions.coming if current_user
+    @attractions ||= Attraction.coming
   end
 
   private
