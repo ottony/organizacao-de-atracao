@@ -7,7 +7,8 @@ class AttractionsController < ApplicationController
   end
 
   def create
-    @attraction = Attraction.new attraction_params
+    @attraction      = Attraction.new attraction_params
+    @attraction.user = current_user
 
     return success_redirect if @attraction.save
 

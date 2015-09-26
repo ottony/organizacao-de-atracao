@@ -41,6 +41,11 @@ RSpec.describe AttractionsController do
       it 'saves one attraction' do
         expect { subject }.to change(Attraction, :count).by 1
       end
+
+      it 'associate attraction to logged user' do
+        subject
+        expect( Attraction.last.user ).to eq( User.last )
+      end
     end
 
     describe 'GET edit' do
