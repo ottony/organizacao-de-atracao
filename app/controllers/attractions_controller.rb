@@ -42,7 +42,7 @@ class AttractionsController < ApplicationController
 
   def attraction_params
     params.require(:attraction).permit(
-        :title, :media
+        :title, :media, :day
     )
   end
 
