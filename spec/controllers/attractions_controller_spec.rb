@@ -89,9 +89,8 @@ RSpec.describe AttractionsController do
     end
 
     describe 'GET index' do
-      before { get :index }
-
       it 'assigns @attractions' do
+        get :index
         expect( assigns :attractions ).to be_kind_of ActiveRecord::Relation
       end
     end

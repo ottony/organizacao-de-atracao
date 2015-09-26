@@ -7,5 +7,9 @@ FactoryGirl.define do
     trait :with_coming_attractions do
       attractions { create_list :attraction, 4, :coming }
     end
+
+    trait :with_attractions do
+      attractions { create_list( :attraction, 4 ) }
+    end
   end
 end
