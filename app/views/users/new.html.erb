@@ -2,6 +2,8 @@
   <h2><%= t(".title") %></h2>
 
   <%= form_for @user do |form| %>
+    <%= render 'shared/errors', messages: @user.errors.full_messages %>
+
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">

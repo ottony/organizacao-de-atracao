@@ -1,11 +1,5 @@
 <%= form_for attraction do |f| %>
-  <div>
-    <ul>
-      <% attraction.errors.full_messages.each do |error| %>
-        <%= content_tag :li, error %>
-      <% end %>
-    </ul>
-  </div>
+  <%= render 'shared/errors', messages: attraction.errors.full_messages %>
 
   <%= f.label :title %>
   <%= f.text_field :title %>
