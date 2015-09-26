@@ -1,0 +1,15 @@
+<% @attractions.each do |attraction| %>
+<div class="attraction">
+  <div class='attraction-head'>
+    <%= content_tag :h4, attraction.title, class: 'attraction-title' %>
+  </div>
+  <div class="attraction-content">
+    <%= content_tag :p, attraction.media, class: 'attraction-media' %>
+    <%= content_tag :h5, l(attraction.day, :format => :short), class: 'attraction-day' %>
+  </div>
+  <div class="attraction-actions">
+    <%= link_to :destroy, attraction_path( attraction ), :method => :delete, data: { confirm: t('attractions.messages.destroy.sure?') } %>
+    <%= link_to :edit, edit_attraction_path( attraction ) %>
+  </div>
+</div>
+<% end %>

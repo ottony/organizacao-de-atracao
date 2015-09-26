@@ -6,6 +6,8 @@ pt-BR:
         success: 'Atração %{title} cadastrada com sucesso'
       update:
         success: 'Atração atualizada com sucesso'
+      destroy:
+        sure?: 'Você tem certeza que deseja excluir?'
   date:
     abbr_day_names:
     - Dom
