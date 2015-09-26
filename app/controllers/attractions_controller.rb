@@ -31,7 +31,7 @@ class AttractionsController < ApplicationController
   end
 
   def index
-    @attractions = Attraction.all
+    @attractions = Attraction.coming
   end
 
   private
