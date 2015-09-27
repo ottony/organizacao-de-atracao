@@ -1,5 +1,13 @@
-.attraction{
-  margin-bottom: 30px;
+.attraction{ 
+  width: 350px;
+
+  &:hover{
+    box-shadow: 1px 1px 10px #949494;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 100%;
+  }
 }
 
 .attraction-body{
