@@ -5,7 +5,7 @@ $(document).ready(function() {
     selector: '.attraction',
     animate: true,
     cellH: 'auto',
-    fixSize: 0,
+    cellW: 'auto',
     onResize: function() {
       wall.refresh();
     }
