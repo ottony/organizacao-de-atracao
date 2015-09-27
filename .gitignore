@@ -12,3 +12,5 @@
 
 coverage/*
 !coverage/.gitkee
+
+smtp_config.yml

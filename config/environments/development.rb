@@ -1,3 +1,8 @@
+smtp_file = Rails.root.join 'config/smtp_config.yml'
+
+smtp_config   = YAML.load_file( smtp_file ) if File.exists? smtp_file.to_s
+smtp_config ||= { :address => "localhost", :port => 1025 }
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -14,9 +19,10 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = smtp_config.symbolize_keys
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
