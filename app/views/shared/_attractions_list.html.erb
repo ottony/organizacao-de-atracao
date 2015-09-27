@@ -17,7 +17,7 @@
         <div class="clearfix"><%= content_tag :p, attraction.media, class: 'attraction-media' %></div>
         <%= content_tag :p, attraction.description, class: 'attraction-description' %>
       </div>
-      <div class="attraction-bottom clearfix">
+      <div class="attraction-bottom">
         <%= link_to_user_attractions attraction, class: 'nick-name' %>
         <%= content_tag :p, l(attraction.day, :format => :short), class: 'day' %>
       </div>
