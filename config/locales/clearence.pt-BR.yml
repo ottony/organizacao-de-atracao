@@ -12,6 +12,13 @@ pt-BR:
       "Senha não pode ficar em branco."
     failure_after_create:
       "Email ou senha não encontrados. Deseja criar uma nova conta? <a href='%{sign_up_path}'>Registrar-se</a>."
+    failure_after_confirm:
+      "Token inválido"
+    success_after_create:
+      "Em instantes você receberá um email para confirmar seu cadastro."
+    success_after_confirm:
+      "Sua conta foi confirmada, basta realizar login"
+
   helpers:
     submit:
       password:

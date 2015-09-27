@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   
   resources :users, only: [:new, :create, :destroy, :index] do
     member do
-      get '/attractions', action: 'attractions', as: 'attractions'
+      get '/attractions',    action: 'attractions', as: 'attractions'
+      get '/confirm/:token', action: 'confirm',     as: 'confirm'
     end
   end
 

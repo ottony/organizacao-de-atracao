@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'User registration' do
   let(:nick_name) { 'OCTC' }
 
-  scenario 'show nick_name' do
+  scenario 'show confirmation message' do
     visit sign_up_path
 
     within '#new_user' do
@@ -14,6 +14,6 @@ feature 'User registration' do
       find('input[type="submit"]').click
     end
 
-    expect(page).to have_content nick_name
+    expect(page).to have_content I18n.t('flashes.success_after_create')
   end
 end
