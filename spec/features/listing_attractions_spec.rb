@@ -54,5 +54,9 @@ feature 'Listing attraction' do
         expect(page).to_not have_content attraction.title
       end
     end
+
+    scenario 'show your attractions message' do
+      expect(page).to have_content /suas atrações/i
+    end
   end
 end

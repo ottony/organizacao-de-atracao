@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def brand_link args = {}
+    link_text   = 'Suas Atrações' if signed_in?
+    link_text ||= 'Atrações'
+
+    link_to link_text, attractions_path, args
+  end
+
   def session_link
     return link_to('Entrar', sign_in_path) unless signed_in?
     

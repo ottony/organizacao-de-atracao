@@ -33,7 +33,7 @@ class AttractionsController < ApplicationController
   end
 
   def index
-    @attractions   = current_user.attractions.coming.includes(:user) if current_user
+    @attractions   = current_user.attractions.coming.includes(:user) if signed_in?
     @attractions ||= Attraction.coming.includes(:user)
   end
 
