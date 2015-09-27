@@ -9,13 +9,13 @@ feature 'Listing attraction' do
 
     background { visit attractions_path }
 
-    scenario 'show titles of coming attractions' do
+    scenario 'show coming attractions' do
       Attraction.coming.each do |attraction|
         expect(page).to have_content attraction.title
       end
     end
 
-    scenario 'not show titles of past attractions' do
+    scenario 'not show past attractions' do
       expect(page).to_not have_content past_attraction.title
     end
 

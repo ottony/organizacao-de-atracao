@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 feature 'Editing attraction' do
-  given(:empty_attraction) { build( :attraction, :empty ) }
-  given(:attraction)       { create( :attraction ) }
-  given(:user) { create( :user ) }
+  given(:attraction) { create( :attraction ) }
+  given(:user)       { create( :user, attractions: [ attraction ] ) }
 
   background do
     visit edit_attraction_path( attraction, as: user )

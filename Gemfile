@@ -7,17 +7,14 @@ gem 'rails', '4.2.4'
 # Use SCSS for stylesheets
 gem 'sass-rails',     '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5'
-
-# Use Uglifier as compressor for JavaScript assets
+gem 'jquery-rails'
+gem 'font-awesome-sass'
 gem 'uglifier', '>= 1.3.0'
 
 # gem 'therubyracer', platforms: :ruby
 
 gem 'clearance', '~> 1.11.0'
-
-gem 'jquery-rails'
-
-gem 'font-awesome-sass'
+gem 'cancancan', '~> 1.12.0'
 
 group :production do
   gem 'passenger', '~> 5.0.20'

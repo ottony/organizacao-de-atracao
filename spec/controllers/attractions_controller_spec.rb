@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe AttractionsController do
-  let(:attraction) { create :attraction }
-
   context 'not logged' do
     describe 'GET index' do
       it 'returns success' do
@@ -18,7 +16,10 @@ RSpec.describe AttractionsController do
   end
 
   context 'logged' do
-    before { sign_in }
+    let(:user) { create :user, :with_attractions }
+    let(:attraction) { user.attractions.first }
+
+    before { sign_in_as user }
 
     describe 'GET new' do
       it 'assigns @attraction' do
@@ -59,8 +60,6 @@ RSpec.describe AttractionsController do
       end
 
       it 'updates attraction' do
-        attraction
-
         expect { subject }.to change{ Attraction.first.title }
       end
 
@@ -70,10 +69,8 @@ RSpec.describe AttractionsController do
     end
 
     describe 'DELETE destroy' do
-      before { create_list :attraction, 3 }
-
       subject do
-        delete :destroy, id: Attraction.last.id
+        delete :destroy, id: user.attractions.last.id
       end
 
       it 'redirect to attractions_path' do
