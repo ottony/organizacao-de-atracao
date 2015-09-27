@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def link_to_user_attractions attraction, args = {}
-    return unless attraction.user_id
+    return unless attraction.user
 
     nick_name   = attraction.user_email if attraction.user_nick_name.to_s.empty?
     nick_name ||= "@#{ attraction.user_nick_name }"

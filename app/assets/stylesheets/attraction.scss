@@ -14,8 +14,13 @@
   padding: 20px;
   background: #3498db;
   color: #fff;
-  .btn-group{
+
+  .attraction-actions{
     float: right;
+    font-size: 18px;
+    padding-top: 10px;
+
+    a { color: #fff; }
   }
 
   .attraction-title{
