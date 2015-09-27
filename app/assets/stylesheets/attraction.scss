@@ -1,13 +1,20 @@
 .attraction{
   width: 360px;
+  margin-bottom: 50px;
 
   &:hover{
-    box-shadow: 1px 1px 10px #949494;
+    .attraction-content{
+      height: auto;
+    }
   }
 }
 
 .attraction-body{
   border: 1px solid rgb(187, 187, 187);
+
+  &:hover{
+    box-shadow: 1px 1px 10px #949494;
+  }
 }
 
 .attraction-head{
@@ -34,7 +41,14 @@
 
 .attraction-content{
   padding: 20px;
+    height: 150px;
+  overflow: hidden;
+  transition: all 0.5;
+  .day {
+    float: right;
+  }
 }
+
 
 .attraction-media{
   padding: 5px 8px;
@@ -49,7 +63,8 @@
 .attraction-description{
   color: #8A8989;
   font-style: italic;
-  font-size: 22px;
+  font-size: 20px;
+  word-wrap: break-word;
 }
 
 .attraction-bottom{

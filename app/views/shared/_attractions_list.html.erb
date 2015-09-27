@@ -1,21 +1,25 @@
 <div  id="attractions" class="row">
 
 <% attractions.each do |attraction| %>
-  <div class="attraction">
+  <div class="attraction col-md-4 col-sm-12">
     <div class="attraction-body">
-      <div class='attraction-head clearfix'>
+      <div class='attraction-head'>
+        <div class='clearfix'>
         <%= content_tag :h4, attraction.title, class: 'attraction-title' %>
         <div class="attraction-actions">
           <%= attraction_actions_links attraction %>
         </div>
+        </div>
       </div>
       <div class="attraction-content">
-        <div class="clearfix"><%= content_tag :p, attraction.media, class: 'attraction-media' %></div>
+        <div class="clearfix">
+          <%= content_tag :p, attraction.media, class: 'attraction-media' %>
+          <%= content_tag :p, l(attraction.day, :format => :short), class: 'day' %>
+        </div>
         <%= content_tag :p, attraction.description, class: 'attraction-description' %>
       </div>
       <div class="attraction-bottom">
         <%= link_to_user_attractions attraction, class: 'nick-name' %>
-        <%= content_tag :p, l(attraction.day, :format => :short), class: 'day' %>
       </div>
     </div>
   </div>

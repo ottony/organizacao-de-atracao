@@ -12,7 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require freeWall
 //= require bootstrap-sprockets
 //= require_tree .
-
