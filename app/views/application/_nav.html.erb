@@ -13,9 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li>
-          <%= link_to 'Atrações passadas', past_attractions_path %>
-        </li>
+        <%= content_tag( :li, link_to( 'Attrações passadas', past_attractions_path ) ) if signed_in? %>
+
         <li>
           <%= link_to 'Usuários', users_path %>
         </li>

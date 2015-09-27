@@ -6,12 +6,7 @@
       <div class='attraction-head clearfix'>
         <%= content_tag :h4, attraction.title, class: 'attraction-title' %>
         <div class="attraction-actions">
-          <%= link_to edit_attraction_path( attraction ) do %>
-            <span class='fa fa-edit'></span>
-          <% end %>
-          <%= link_to attraction_path( attraction ), :method => :delete, data: { confirm: "Você tem certeza?" } do %>
-            <span class='fa fa-trash-o'></span>
-          <% end %>
+          <%= attraction_actions_links attraction %>
         </div>
       </div>
       <div class="attraction-content">

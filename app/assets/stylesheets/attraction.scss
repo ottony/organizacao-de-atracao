@@ -1,4 +1,4 @@
-.attraction{ 
+.attraction{
   width: 360px;
 
   &:hover{
@@ -20,7 +20,9 @@
     font-size: 18px;
     padding-top: 10px;
 
-    a { color: #fff; }
+    a {
+      color: #fff;
+      padding-left: 10px; }
   }
 
   .attraction-title{
