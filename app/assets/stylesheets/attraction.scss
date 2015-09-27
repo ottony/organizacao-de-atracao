@@ -1,16 +1,57 @@
-.attraction {
-  border: 1px solid gray;
-  margin: 10px 0px;
+.attraction{
+  margin-bottom: 30px;
 }
 
-.attraction-content {
+.attraction-body{
+  border: 1px solid #ececec;
 }
 
-.attraction-title {
-  background-color: #46B6AC;
-  font-size: 40px;
-  padding: 10px 0px;
-  text-align: center;
-  color: white;
-  margin: 0px;
+.attraction-head{
+  padding: 20px;
+  background: #3498db;
+  color: #fff;
+  .btn-group{
+    float: right;
+  }
+
+  .attraction-title{
+    float:left;  
+    text-transform: uppercase;
+    
+  }
+}
+
+.attraction-content{
+  padding: 20px;
+}
+
+.attraction-media{
+  padding: 5px 8px;
+  font-weight: 800;
+  font-size: 12px;
+  border-radius: 5px;
+  color: #fff;
+  background: #1abc9c;
+  float: left;
+}
+
+.attraction-description{
+  color: #8A8989;
+  font-style: italic;
+  font-size: 22px;
+}
+
+.attraction-bottom{
+  padding: 10px 20px;
+  border-top: 1px solid #ececec;
+  background: #f8f8f8;
+  font-size: 18px;
+
+  .day {
+    float: right;
+  }
+
+  .nick-name {
+    float: left;
+  }
 }

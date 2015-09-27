@@ -2,10 +2,12 @@ require 'rails_helper'
 include Features::ClearanceHelpers
 
 feature 'Listing attraction' do
-  let!(:past_attraction) { create :attraction, :past }
-  let!(:coming_attractions) { create_list :attraction, 3, :coming }
 
   context 'when not logged' do
+    let!(:user) { create :user, :with_coming_attractions }
+    let!(:user_without_nick) { create :user, :with_coming_attractions, nick_name: ''  }
+    let!(:past_attraction) { create :attraction, :past }
+
     background { visit attractions_path }
 
     scenario 'show titles of coming attractions' do
@@ -19,11 +21,20 @@ feature 'Listing attraction' do
     end
 
     scenario 'show formated date' do
-      expect(page).to have_content I18n.l(coming_attractions.first.day, :format => :short)
+      expect(page).to have_content I18n.l(Attraction.coming.first.day, :format => :short)
+    end
+
+    scenario 'show user nick_name with @' do
+      expect(page).to have_content "@#{user.nick_name}"
+    end
+    
+    scenario 'show email when user does not have nick_name' do
+      expect(page).to have_content "#{user_without_nick.email}"
     end
   end
 
   context 'when logged' do
+    let!(:coming_attractions) { create_list :attraction, 3, :coming }
     let(:user) { create :user, :with_coming_attractions }
 
     background do

@@ -1,15 +1,28 @@
+<div class="row">
+
 <% attractions.each do |attraction| %>
-  <div class="attraction">
-    <div class='attraction-head'>
-      <%= content_tag :h4, attraction.title, class: 'attraction-title' %>
-    </div>
-    <div class="attraction-content">
-      <%= content_tag :p, attraction.media, class: 'attraction-media' %>
-      <%= content_tag :h5, l(attraction.day, :format => :short), class: 'attraction-day' %>
-    </div>
-    <div class="attraction-actions">
-      <%= link_to :destroy, attraction_path( attraction ), :method => :delete, data: { confirm: t('attractions.messages.destroy.sure?') } %>
-      <%= link_to :edit, edit_attraction_path( attraction ) %>
+  <div class="col-sm-6 attraction">
+    <div class="attraction-body">
+      <div class='attraction-head clearfix'>
+        <%= content_tag :h4, attraction.title, class: 'attraction-title' %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-bars "></span></button>
+            <ul class="dropdown-menu">
+              <li><%= link_to :edit, edit_attraction_path( attraction ) %></li>
+              <li><%= link_to :delete, attraction_path( attraction ), :method => :delete %></li>
+            </ul>
+          </div>
+      </div>
+      <div class="attraction-content">
+        <div class="clearfix"><%= content_tag :p, attraction.media, class: 'attraction-media' %></div>
+        <%= content_tag :p, attraction.description, class: 'attraction-description' %>
+      </div>
+      <div class="attraction-bottom clearfix">
+        <%= link_to_user_attractions attraction, class: 'nick-name' %>
+        <%= content_tag :p, l(attraction.day, :format => :short), class: 'day' %>
+      </div>
     </div>
   </div>
 <% end %>
+
+</div>

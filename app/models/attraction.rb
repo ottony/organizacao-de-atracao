@@ -4,4 +4,6 @@ class Attraction < ActiveRecord::Base
 
   scope :coming, ->{ where('day >= ?', Time.now).order(:day) }
   scope :past,   ->{ where('day < ?', Time.now).order(:day)  }
+
+  delegate :nick_name, :email, :to => :user, prefix: true
 end

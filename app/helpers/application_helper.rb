@@ -20,4 +20,13 @@ module ApplicationHelper
     type_class ||= type.to_s
     "alert #{type_class}"
   end
+
+  def link_to_user_attractions attraction, args = {}
+    return unless attraction.user_id
+
+    nick_name   = attraction.user_email if attraction.user_nick_name.to_s.empty?
+    nick_name ||= "@#{ attraction.user_nick_name }"
+
+    link_to nick_name, attractions_user_path( attraction.user_id ), args
+  end
 end
