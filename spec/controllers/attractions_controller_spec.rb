@@ -94,5 +94,12 @@ RSpec.describe AttractionsController do
         expect( assigns :attractions ).to be_kind_of ActiveRecord::Relation
       end
     end
+
+    describe 'GET past_attraction' do
+      it 'assigns @attractions' do
+        get :past
+        expect( assigns( :attractions ) ).to be_kind_of ActiveRecord::Relation
+      end
+    end
   end
 end

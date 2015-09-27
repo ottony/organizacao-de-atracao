@@ -37,6 +37,10 @@ class AttractionsController < ApplicationController
     @attractions ||= Attraction.coming.includes(:user)
   end
 
+  def past
+    @attractions = current_user.attractions.past.includes(:user)
+  end
+
   private
 
   def set_attraction

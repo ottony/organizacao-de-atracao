@@ -9,7 +9,10 @@ FactoryGirl.define do
     end
 
     trait :with_attractions do
-      attractions { create_list( :attraction, 4 ) }
+      attractions do
+        create_list( :attraction, 2, :coming ) +
+          create_list(:attraction, 2, :past)
+      end
     end
   end
 end
