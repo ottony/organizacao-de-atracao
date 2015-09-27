@@ -1,14 +1,13 @@
 require 'rails_helper'
 include Features::AttractionsHelpers
-include Features::ClearanceHelpers
 
 feature 'Creating attraction' do
   given(:attraction_title) { 'A Lagoa Azul' }
   given(:empty_attraction) { build( :attraction, :empty ) }
+  given(:user) { create( :user ) }
 
   background do
-    sign_in
-    visit new_attraction_path
+    visit new_attraction_path( as: user )
   end
 
   scenario 'show success' do

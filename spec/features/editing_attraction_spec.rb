@@ -1,13 +1,12 @@
 require 'rails_helper'
-include Features::ClearanceHelpers
 
 feature 'Editing attraction' do
   given(:empty_attraction) { build( :attraction, :empty ) }
   given(:attraction)       { create( :attraction ) }
+  given(:user) { create( :user ) }
 
   background do
-    sign_in
-    visit edit_attraction_path( attraction )
+    visit edit_attraction_path( attraction, as: user )
   end
 
   scenario 'load attraction title' do

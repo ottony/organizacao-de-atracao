@@ -28,11 +28,8 @@ RSpec.describe AttractionsController do
     end
 
     describe 'POST create' do
-      let(:attraction_args) do
-        build( :attraction ).as_json( only: [:title, :media] )
-      end
 
-      subject { post :create, attraction: attraction_args }
+      subject { post :create, attraction: attributes_for(:attraction) }
 
       it 'redirect to attractions_path' do
         expect( subject ).to redirect_to( attractions_path )

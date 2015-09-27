@@ -1,12 +1,11 @@
 require 'rails_helper'
-include Features::ClearanceHelpers
 
 feature 'Listing attraction' do
 
   context 'when not logged' do
-    let!(:user) { create :user, :with_coming_attractions }
-    let!(:user_without_nick) { create :user, :with_coming_attractions, nick_name: ''  }
-    let!(:past_attraction) { create :attraction, :past }
+    given!(:user) { create :user, :with_coming_attractions }
+    given!(:user_without_nick) { create :user, :with_coming_attractions, nick_name: ''  }
+    given!(:past_attraction)   { create :attraction, :past }
 
     background { visit attractions_path }
 
@@ -34,14 +33,10 @@ feature 'Listing attraction' do
   end
 
   context 'when logged' do
-    let!(:coming_attractions) { create_list :attraction, 3, :coming }
-    let(:user) { create :user, :with_coming_attractions }
+    given!(:coming_attractions) { create_list :attraction, 3, :coming }
+    given(:user) { create :user, :with_coming_attractions }
 
-    background do
-      sign_in_as user, user.password
-
-      visit attractions_path
-    end
+    background { visit attractions_path( as: user ) }
 
     scenario 'show my attractions' do
       user.attractions.coming.each do |attraction|
