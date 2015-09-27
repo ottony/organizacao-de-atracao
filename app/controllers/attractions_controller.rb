@@ -33,8 +33,8 @@ class AttractionsController < ApplicationController
   end
 
   def index
-    @attractions   = current_user.attractions.coming if current_user
-    @attractions ||= Attraction.coming
+    @attractions   = current_user.attractions.coming.includes(:user) if current_user
+    @attractions ||= Attraction.coming.includes(:user)
   end
 
   private
