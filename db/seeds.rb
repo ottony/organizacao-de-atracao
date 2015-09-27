@@ -9,18 +9,33 @@
 attractions = [
   {
     title: 'True Detective',
-    media: 'television',
-    day: 1.hour.from_now
+    media: 'TV',
+    day: 1.hour.from_now,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non auctor mauris.'
   },
   {
     title: 'interstellar',
     media: 'cinema',
-    day: 1.day.from_now
+    day: 1.day.from_now,
+    description: 'Aenean massa nisi, pharetra in sodales at, elementum vitae metus.'
   },
   {
-    title: 'Is TDD dead?',
-    media: 'Hangout',
-    day: 8.hours.from_now
+    title: 'Breaking Bad',
+    media: 'TV',
+    day: 8.hours.from_now,
+    description: 'Phasellus non imperdiet enim. Etiam a suscipit lectus.'
+  },
+  {
+    title: 'System of a Down',
+    media: 'YouTube',
+    day: 2.day.from_now,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    title: 'Notch Coding',
+    media: 'Twitch',
+    day: 10.days.from_now,
+    description: 'Curabitur scelerisque ligula ut ante molestie, ut fringilla ex condimentum. Quisque aliquam nulla sed mi cursus tincidunt. '
   },
 ]
 
