@@ -1,4 +1,7 @@
 class UserMailer < ActionMailer::Base
+  DOMAIN = Rails.application.config.domain
+  PORT = Rails.application.config.port
+
   default from: 'staf@dilek.com.br'
 
   def welcome_mail user
@@ -15,7 +18,9 @@ class UserMailer < ActionMailer::Base
       controller: 'users',
       action: 'confirm',
       id: user.id,
-      token: user.confirmation_token
+      token: user.confirmation_token,
+      host: DOMAIN,
+      port: PORT
     )
   end
 end

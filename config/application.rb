@@ -32,6 +32,8 @@ module OrganizacaoDeAtracao
 
     config.action_mailer.raise_delivery_errors = false
     config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+    config.domain = 'http://localhost'
+    config.domain = 3000
 
     config.active_record.raise_in_transactional_callbacks = true
   end
