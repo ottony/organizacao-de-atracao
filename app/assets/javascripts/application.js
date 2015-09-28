@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery_mask.min
+//= require jquery.maskedinput.min
 //= require bootstrap-sprockets
 //= require_tree .
 
 $(document).ready(function() {
-  $('#attraction_day').mask('00/00/0000 00:00');
+  $('#attraction_day').mask('99/99/9999 99:99', {placeholder:"mm/dd/yyyy hh:mm"});
   
   $('#users-list .attraction').click(function(){
     $( this ).find('.attraction-content').toggleClass('expand-user');
