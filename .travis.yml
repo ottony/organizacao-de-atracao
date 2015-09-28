@@ -1,5 +1,7 @@
 language: ruby
 rvm: 2.2.3
+before_script:
+  - cp config/database.yml.sample config/database.yml
 bundler_args: --without production
 gemfile: Gemfile
 install:
