@@ -41,6 +41,12 @@ test:
 
 ```
 
+Rodar as migrations
+```
+bundle exec rake db:create db:migrate db:seed
+```
+
+
 #### Instalar as dependencias:
 
 
