@@ -18,4 +18,8 @@
 
 $(document).ready(function() {
   $('#attraction_day').mask('00/00/0000 00:00');
+  
+  $('#users-list .attraction').click(function(){
+    $( this ).find('.attraction-content').toggleClass('expand-user');
+  });
 });

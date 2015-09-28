@@ -7,3 +7,39 @@
     padding: 10px;
   }
 }
+
+#users-list{
+  .attraction{
+    &:hover{
+      .attraction-content{
+        height: 0px;
+      }
+    }
+  }
+
+  .attraction-content{
+      height: 0px;
+      padding: 0;
+
+  }
+
+  .attraction-content.expand-user{
+    height: auto !important;
+  }
+
+  .see-more {
+    text-align: center;
+    font-weight: 800;
+  }
+}
+
+.attractions-user{
+  padding: 15px;
+  &:nth-child(odd){
+    background: #ececec;
+  }
+
+  p{
+    margin: 0;
+  }
+}

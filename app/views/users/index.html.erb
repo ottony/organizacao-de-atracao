@@ -1,5 +1,37 @@
-<ul>
-<% @users.each do |user| %>
-  <%= content_tag :li, user.nick_name %>
-<% end %>
-</ul>
+<div  id="users-list" class="row">
+  <% @users.each do |user| %>
+    <div class="attraction col-sm-12">
+      <div class="attraction-body">
+        <div class='attraction-head'>
+          <div class='clearfix'>
+            <%= content_tag :h4, user.nick_name, class: 'attraction-title' %>
+            <div class="attraction-actions">
+              <span class="badge"><%= user.attractions.count %></span>
+            </div>
+          </div>
+        </div>
+        <div class="attraction-content">
+          
+            <% user.attractions.each do | attraction |%>
+              <div class="attractions-user row">
+                <div class="col-md-3"><%= content_tag :p, attraction.title %></div>
+                <div class="col-md-5"><%= content_tag :p, attraction.description %></div>
+                <div class="col-md-3"><%= content_tag :p, attraction.day %></div>
+                <div class="col-md-1"><span class="badge"><%= content_tag :p, attraction.media %></span></div>
+              </div>
+            <% end %>
+            <div class="attractions-user row">
+              <div class="col-md-12 see-more" style="">
+                <%= link_to 'VER MAIS', attractions_user_path(user) %>
+              </div>
+              
+            </div>
+          
+        </div>
+        <div class="attraction-bottom">
+          <%= user.email %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
