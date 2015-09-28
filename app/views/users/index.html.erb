@@ -16,7 +16,7 @@
               <div class="attractions-user row">
                 <div class="col-md-3"><%= content_tag :p, attraction.title %></div>
                 <div class="col-md-5"><%= content_tag :p, attraction.description %></div>
-                <div class="col-md-3"><%= content_tag :p, l(attraction.day, :format => :short) %></div>
+                <div class="col-md-3"><%= content_tag :p, l(attraction.day, :format => :long) %></div>
                 <div class="col-md-1"><span class="badge"><%= content_tag :p, attraction.media %></span></div>
               </div>
             <% end %>
