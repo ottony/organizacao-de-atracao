@@ -45,5 +45,5 @@ attractions = [
   }
 ]
 
-user = User.create( email: 'example@email.com', password: 'password', nick_name: 'OCTC' )
+user = User.create( email: 'example@email.com', password: 'password', nick_name: 'OCTC', confirmed_at: Time.now )
 user.attractions.create( attractions )
