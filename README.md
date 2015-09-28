@@ -4,6 +4,10 @@
 
 # Dilek
 
+O que é?
+
+[Dilek]
+
 http://dilek.herokuapp.com
 
 ## Acessar com usuário padrão
@@ -74,3 +78,5 @@ password:             'YOUR_PASSWORD'
 authentication:       'plain'
 enable_starttls_auto: true
 ```
+
+[Dilek]: <https://translate.google.com/?source=osdd#auto/en/dilek>
