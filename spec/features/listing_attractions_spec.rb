@@ -20,7 +20,7 @@ feature 'Listing attraction' do
     end
 
     scenario 'show formated date' do
-      expect(page).to have_content I18n.l(Attraction.coming.first.day, :format => :short)
+      expect(page).to have_content I18n.l(Attraction.coming.first.day, :format => :long)
     end
 
     scenario 'show user nick_name with @' do
