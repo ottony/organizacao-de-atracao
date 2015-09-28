@@ -21,11 +21,13 @@ password: password
 
 #### Instalar as dependencias:
 
-
 ```
+
 bundle install
 
 ```
+
+Caso tenha algum problema com a gem json 1.8.3, veja essa [issue]
 
 #### Confirgurar banco de dados:
  Criar config/database.yml.
@@ -85,4 +87,5 @@ authentication:       'plain'
 enable_starttls_auto: true
 ```
 
+[issue]: <https://github.com/flori/json/issues/253>
 [Dilek]: <https://translate.google.com/?source=osdd#auto/en/dilek>
