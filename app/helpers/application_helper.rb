@@ -19,12 +19,12 @@ module ApplicationHelper
   def alert_class type
     type_class = {
       'success' => 'alert-success',
-      'error'   => 'alert-error',
-      'alert'   => 'alert-block',
-      'notice'  => 'alert-info'
+      'error'   => 'alert-danger',
+      'alert'   => 'alert-warning',
+      'notice'  => 'alert-success'
     }[type.to_s]
 
-    type_class ||= type.to_s
+    type_class ||= 'alert-info'
     "alert #{type_class}"
   end
 end
