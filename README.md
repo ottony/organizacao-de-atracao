@@ -8,8 +8,6 @@ http://dilek.herokuapp.com
 
 ## Acessar com usuário padrão
 ```
-#!shell
-
 email: example@email.com
 password: password
 ```
@@ -23,7 +21,6 @@ password: password
 Exemplo (config/database.yml.sample):
 
 ```
-#!yml
 default: &default
   adapter: sqlite3
   pool: 5
@@ -43,8 +40,6 @@ test:
 
 
 ```
-#!ruby
-
 bundle install
 
 ```
@@ -52,8 +47,6 @@ bundle install
 #### Rodar os teste
 
 ```
-#!ruby
-
 bundle exec rspec
 ```
 
@@ -65,8 +58,6 @@ Para visializar os emails, basta rodar o mailcatcher e acessar http://localhost:
 
 
 ```
-#!shell
-
 bundle exec mailcatcher
 ```
 
@@ -75,8 +66,6 @@ Caso deseje o envio real de emails, basta criar o arquivo config/smtp_config.yml
 Exemplo (config/smtp_config.yml.sample):
 
 ```
-#!yml
-
 address:              'smtp.gmail.com'
 port:                 587
 domain:               'localhost:3000'
