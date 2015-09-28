@@ -1,17 +1,21 @@
 <div id="clearance" class="sign-up">
   <h2><%= t(".title") %></h2>
 
-  <%= form_for @user do |form| %>
+  <%= form_for @user, html: { class: 'form-horizontal' } do |form| %>
     <%= render 'shared/errors', messages: @user.errors.full_messages %>
 
     <%= render partial: '/users/form', object: form %>
 
-    <div class="submit-field">
-      <%= form.submit %>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= form.submit %>
+      </div>
     </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+    <div class="other-links form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= link_to t(".sign_in"), sign_in_path %>
+      </div>
     </div>
   <% end %>
 </div>

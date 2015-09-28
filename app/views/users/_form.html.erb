@@ -1,14 +1,20 @@
 <div class="text-field">
-  <%= form.label :nick_name %>
-  <%= form.text_field :nick_name %>
+  <%= form.label :nick_name, class: 'col-sm-2 control-label' %>
+  <div class="form-group">
+    <%= form.text_field :nick_name %>
+  </div>
 </div>
 
 <div class="text-field">
-  <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
+  <%= form.label :email, class: 'col-sm-2 control-label' %>
+  <div class="form-group">
+    <%= form.text_field :email, type: 'email' %>
+  </div>
 </div>
 
 <div class="password-field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.label :password, class: 'col-sm-2 control-label' %>
+  <div class="form-group">
+    <%= form.password_field :password %>
+  </div>
 </div>
