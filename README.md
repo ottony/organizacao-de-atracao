@@ -5,6 +5,7 @@
 # Dilek
 
 O que é?
+Uma aplicação para agenda de atrações
 
 [Dilek]
 
@@ -48,7 +49,7 @@ bundle install
 
 ```
 
-#### Rodar os teste
+#### Rodar os testes
 
 ```
 bundle exec rspec
