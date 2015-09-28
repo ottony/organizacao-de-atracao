@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_mask.min
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).ready(function() {
+  $('#attraction_day').mask('00/00/0000 00:00');
+});
